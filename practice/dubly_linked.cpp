@@ -64,6 +64,10 @@ public:
         }
         size++;
     };
+    void insertAt(int elem)
+    {
+        Node *temp = new Node(elem);
+    }
 
     void printList()
     {

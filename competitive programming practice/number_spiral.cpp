@@ -1,7 +1,38 @@
-#include <bits/stdc++.h>
-#include <vector>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
+
+void solve()
+{
+    long long y, x;
+    cin >> y >> x;
+
+    long long m = max(y, x);
+
+    if (m % 2 == 1)
+    {
+        if (x == m)
+        {
+            cout << (m * m) - y + 1 << "\n";
+        }
+        else
+        {
+            cout << (m - 1) * (m - 1) + x << "\n";
+        }
+    }
+    else
+    {
+        if (y == m)
+        {
+            cout << (m * m) - x + 1 << "\n";
+        }
+        else
+        {
+            cout << (m - 1) * (m - 1) + y << "\n";
+        }
+    }
+}
 
 int main()
 {
@@ -9,30 +40,13 @@ int main()
     cin.tie(NULL);
 
     int t;
-    cout << "insert t :" << endl;
-    cin >> t;
-    int count = 0;
-    int x;
-    int y;
-    cin >> x;
-    cin >> y;
-
-    int n_max = max(x, y);
-    int n_min = min(x, y);
-
-    if (n_max % 2 == 0)
+    if (cin >> t)
     {
-        if (n_max == x)
+        while (t--)
         {
-            cout << ((x * x) - (x - y + 1)) << endl;
-        }
-        else
-        {
-            cout << (((n_max * n_max) / 2) + 2 + x) << endl;
+            solve();
         }
     }
-    else
-    {
-        cout << (n_max * n_max) + n_min << endl;
-    }
+
+    return 0;
 }
